@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import newsReducer from "../news/store/news.reducer";
+import storiesReducer from "../stories/store/stories.reducer";
 
 export const reducers = combineReducers({
-  newssState: newsReducer,
+  storiesState: storiesReducer,
 });

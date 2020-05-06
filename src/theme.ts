@@ -1,5 +1,3 @@
-import { css } from "styled-components";
-
 export const theme = {
   colors: {
     primary: "#2a13bd",
@@ -21,30 +19,6 @@ export const theme = {
     lg: "30px",
     xl: "40px",
     xxl: "50px",
-  },
-  typography: {
-    h1: css`
-      font-size: 27px;
-      font-weight: 500;
-    `,
-    h2: css`
-      font-size: 22px;
-      font-weight: 300;
-    `,
-    h3: css`
-      font-size: 20px;
-      font-weight: 500;
-      line-height: 26px;
-    `,
-    h4: css`
-      font-size: 18px;
-      font-weight: 300;
-      line-height: 26px;
-    `,
-    link: css`
-      font-size: 15px;
-      font-weight: 500;
-    `,
   },
 };
 
