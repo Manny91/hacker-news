@@ -11,7 +11,7 @@ import {
   PERFORM_GET_STORIES_DETAIL_SUCCESS,
   GetStoriesDetailErrorAction,
   PERFORM_GET_STORIES_DETAIL_ERROR,
-} from "./../stories.actions";
+} from "../stories.actions";
 import storiesReducer, { StoriesState } from "../stories.reducer";
 import { Story } from "../../services/stories.service";
 

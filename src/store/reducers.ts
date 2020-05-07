@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import storiesReducer from "../stories/store/stories.reducer";
+import storiesReducer from "../stories-module/store/stories.reducer";
 
 export const reducers = combineReducers({
   storiesState: storiesReducer,

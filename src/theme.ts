@@ -1,9 +1,11 @@
 export const theme = {
   colors: {
-    primary: "#2a13bd",
-    secondary: "#4285f4",
-    accent: "#00ffff",
-    fill: "#f6f6f6",
+    boldBlue: "#2a13bd",
+    bolderBlue: "#14137d",
+    coldBlue: "#4285f4",
+    tealTitan: "#00ffff",
+    almostWhite: "#f6f6f6",
+    nearlyBlack: "#020202",
   },
   media: {
     sm: `(min-width: 568px)`,

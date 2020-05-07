@@ -4,8 +4,8 @@ import { reducers } from "./reducers";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { sagas } from "./sagas";
 import { Dispatch } from "react";
-import { StoriesActions } from "../stories/store/stories.actions";
-import { StoriesState } from "../stories/store/stories.reducer";
+import { StoriesActions } from "../stories-module/store/stories.actions";
+import { StoriesState } from "../stories-module/store/stories.reducer";
 
 let store = null;
 

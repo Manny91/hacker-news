@@ -1,4 +1,4 @@
-import { getSelectedStoriesFromDictionary } from "./../store/stories.reducer";
+import { getSelectedStoriesFromDictionary } from "../store/stories.reducer";
 import {
   getStoriesId,
   getStoriesError,

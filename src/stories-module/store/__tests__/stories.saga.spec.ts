@@ -2,7 +2,7 @@ import {
   PERFORM_GET_STORIES,
   PERFORM_GET_STORIES_DETAIL,
   performGetStoriesDetailAction,
-} from "./../stories.actions";
+} from "../stories.actions";
 import {
   storiesSaga,
   performGetStoriesSaga,
