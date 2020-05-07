@@ -4,11 +4,13 @@ export const PERFORM_GET_STORIES = "[Stories] Perform Get Stories";
 export const PERFORM_GET_STORIES_SUCCESS =
   "[Stories] Perform Get Stories Success";
 export const PERFORM_GET_STORIES_ERROR = "[Stories] Perform Get Stories Error";
-export const PERFORM_GET_STORY_DETAIL = "[Stories] Perform Get Story Detail";
-export const PERFORM_GET_STORY_DETAIL_SUCCESS =
-  "[Stories] Perform Get Story Detail Success";
-export const PERFORM_GET_STORY_DETAIL_ERROR =
-  "[Stories] Perform Get Story Detail Error";
+const SELECT_STORIES = "[Stories] Select Stories";
+export const PERFORM_GET_STORIES_DETAIL =
+  "[Stories] Perform Get Stories Detail";
+export const PERFORM_GET_STORIES_DETAIL_SUCCESS =
+  "[Stories] Perform Get Stories Detail Success";
+export const PERFORM_GET_STORIES_DETAIL_ERROR =
+  "[Stories] Perform Get Stories Detail Error";
 
 export type GetStoriesAction = {
   type: "[Stories] Perform Get Stories";
@@ -39,36 +41,47 @@ export const performGetStoriesErrorAction = (
   payload,
 });
 
-export type GetStoryDetailAction = {
-  type: "[Stories] Perform Get Story Detail";
-  payload: number;
+export type SelectStoriesAction = {
+  type: "[Stories] Select Stories";
+  payload: number[];
 };
-export const performGetStoryDetailAction = (
-  payload: number
-): GetStoryDetailAction => ({
-  type: PERFORM_GET_STORY_DETAIL,
+export const performSelectStoriesAction = (
+  payload: number[]
+): SelectStoriesAction => ({
+  type: SELECT_STORIES,
   payload,
 });
 
-export type GetStoryDetailSuccessAction = {
-  type: "[Stories] Perform Get Story Detail Success";
-  payload: Story;
+export type GetStoriesDetailAction = {
+  type: "[Stories] Perform Get Stories Detail";
+  payload: number[];
 };
-export const performGetStoryDetailSuccessAction = (
-  payload: Story
-): GetStoryDetailSuccessAction => ({
-  type: PERFORM_GET_STORY_DETAIL_SUCCESS,
+export const performGetStoriesDetailAction = (
+  payload: number[]
+): GetStoriesDetailAction => ({
+  type: PERFORM_GET_STORIES_DETAIL,
   payload,
 });
 
-export type GetStoryDetailErrorAction = {
-  type: "[Stories] Perform Get Story Detail Error";
+export type GetStoriesDetailSuccessAction = {
+  type: "[Stories] Perform Get Stories Detail Success";
+  payload: Story[];
+};
+export const performGetStoriesDetailSuccessAction = (
+  payload: Story[]
+): GetStoriesDetailSuccessAction => ({
+  type: PERFORM_GET_STORIES_DETAIL_SUCCESS,
+  payload,
+});
+
+export type GetStoriesDetailErrorAction = {
+  type: "[Stories] Perform Get Stories Detail Error";
   payload: string;
 };
-export const performGetStoryDetailErrorAction = (
+export const performGetStoriesDetailErrorAction = (
   payload: string
-): GetStoryDetailErrorAction => ({
-  type: PERFORM_GET_STORY_DETAIL_ERROR,
+): GetStoriesDetailErrorAction => ({
+  type: PERFORM_GET_STORIES_DETAIL_ERROR,
   payload,
 });
 
@@ -76,6 +89,7 @@ export type StoriesActions =
   | GetStoriesAction
   | GetStoriesSuccessAction
   | GetStoriesErrorAction
-  | GetStoryDetailAction
-  | GetStoryDetailSuccessAction
-  | GetStoryDetailErrorAction;
+  | SelectStoriesAction
+  | GetStoriesDetailAction
+  | GetStoriesDetailSuccessAction
+  | GetStoriesDetailErrorAction;

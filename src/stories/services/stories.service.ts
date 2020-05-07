@@ -1,6 +1,6 @@
 import httpClient from "../../services/httpClient";
 
-type StoryType = "job" | "comment" | "poll" | "pollopt" | "story";
+export type StoryType = "job" | "comment" | "poll" | "pollopt" | "story";
 export interface Story {
   id: number;
 

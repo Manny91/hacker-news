@@ -6,6 +6,10 @@ import styled, { ThemeProvider } from "./styled-components";
 import { theme } from "./theme";
 import TopStoriesDashboardComponent from "./stories/top-stories/top-stories-dashboard.container.component";
 import MenuPanel from "./stories/components/menu/menu";
+import "antd/dist/antd.min.css";
+// import "antd/es/table/style/css";
+// import "antd/es/pagination/style/css";
+import "./App.css";
 
 function App() {
   const store = configureStore();

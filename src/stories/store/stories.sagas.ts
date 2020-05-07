@@ -2,34 +2,37 @@ import {
   PERFORM_GET_STORIES,
   performGetStoriesSuccessAction,
   performGetStoriesErrorAction,
-  PERFORM_GET_STORY_DETAIL,
-  GetStoryDetailAction,
-  performGetStoryDetailErrorAction,
-  performGetStoryDetailSuccessAction,
+  PERFORM_GET_STORIES_DETAIL,
+  performGetStoriesDetailErrorAction,
+  GetStoriesDetailAction,
+  performGetStoriesDetailSuccessAction,
 } from "./stories.actions";
-import { all, takeLatest, call, put } from "redux-saga/effects";
-import newsService from "../services/stories.service";
+import { all, takeLatest, call, put, takeEvery } from "redux-saga/effects";
+import storiesService from "../services/stories.service";
 
 export function* storiesSaga() {
   yield all([
     takeLatest(PERFORM_GET_STORIES, performGetStoriesSaga),
-    takeLatest(PERFORM_GET_STORY_DETAIL, performGetStoryDetailSaga),
+    takeEvery(PERFORM_GET_STORIES_DETAIL, performGetStoriesDetailSaga),
   ]);
 }
 export function* performGetStoriesSaga() {
   try {
-    const response = yield call(newsService.getTopStories);
+    const response = yield call(storiesService.getTopStories);
     yield put(performGetStoriesSuccessAction(response));
   } catch (error) {
     yield put(performGetStoriesErrorAction(error.message));
   }
 }
-
-export function* performGetStoryDetailSaga(action: GetStoryDetailAction) {
+export function* performGetStoriesDetailSaga(action: GetStoriesDetailAction) {
   try {
-    const response = yield call(newsService.getStoryDetail, action.payload);
-    yield put(performGetStoryDetailSuccessAction(response));
+    const response = yield all(
+      action.payload.map((storyId) =>
+        call(storiesService.getStoryDetail, storyId)
+      )
+    );
+    yield put(performGetStoriesDetailSuccessAction(response));
   } catch (error) {
-    yield put(performGetStoryDetailErrorAction(error.message));
+    yield put(performGetStoriesDetailErrorAction(error.message));
   }
 }

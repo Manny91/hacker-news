@@ -1,15 +1,14 @@
 import {
   PERFORM_GET_STORIES,
-  PERFORM_GET_STORY_DETAIL,
-  performGetStoriesAction,
-  performGetStoryDetailAction,
+  PERFORM_GET_STORIES_DETAIL,
+  performGetStoriesDetailAction,
 } from "./../stories.actions";
 import {
   storiesSaga,
   performGetStoriesSaga,
-  performGetStoryDetailSaga,
+  performGetStoriesDetailSaga,
 } from "../stories.sagas";
-import { takeLatest, all, call } from "redux-saga/effects";
+import { takeLatest, all, call, takeEvery } from "redux-saga/effects";
 import storiesService from "../../services/stories.service";
 
 describe("Stories Sagas", () => {
@@ -17,7 +16,7 @@ describe("Stories Sagas", () => {
     const generator = storiesSaga();
     const expectedYield = all([
       takeLatest(PERFORM_GET_STORIES, performGetStoriesSaga),
-      takeLatest(PERFORM_GET_STORY_DETAIL, performGetStoryDetailSaga),
+      takeEvery(PERFORM_GET_STORIES_DETAIL, performGetStoriesDetailSaga),
     ]);
     const actualYield = generator.next().value;
     expect(actualYield).toEqual(expectedYield);
@@ -34,13 +33,17 @@ describe("Stories Sagas", () => {
     });
   });
 
-  describe("performGetPokemonDetail saga", () => {
-    const storyId = 1;
-    const action = performGetStoryDetailAction(storyId);
-    const detailGenerator = performGetStoryDetailSaga(action);
+  describe("performStoriesDetailAction saga", () => {
+    const storyIds = [1, 2, 3];
+    const action = performGetStoriesDetailAction(storyIds);
+    const detailGenerator = performGetStoriesDetailSaga(action);
 
     it("should call storiesService.getStoryDetail correctly", () => {
-      const expectedYield = call(storiesService.getStoryDetail, storyId);
+      const expectedYield = all(
+        action.payload.map((storyId) =>
+          call(storiesService.getStoryDetail, storyId)
+        )
+      );
       const actualYield = detailGenerator.next().value;
       expect(actualYield).toEqual(expectedYield);
     });

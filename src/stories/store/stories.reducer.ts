@@ -7,17 +7,21 @@ interface StoryDictionary<T> {
   [Key: string]: T;
 }
 export interface StoriesState {
-  loading: boolean;
+  loadingStories: boolean;
   error: string;
   storiesId: number[];
   storiesDictionary: StoryDictionary<Story>;
+  loadingStoriesDetail: boolean;
+  selectedStories: number[];
 }
 
 export const initialStoriesState: StoriesState = {
-  loading: true,
+  loadingStories: true,
   error: "",
   storiesId: [],
   storiesDictionary: {},
+  loadingStoriesDetail: false,
+  selectedStories: [],
 };
 
 export default function storiesReducer(
@@ -26,41 +30,57 @@ export default function storiesReducer(
 ) {
   switch (action.type) {
     case "[Stories] Perform Get Stories":
-    case "[Stories] Perform Get Story Detail":
       return {
         ...state,
-        loading: true,
+        loadingStories: true,
       };
     case "[Stories] Perform Get Stories Success":
       return {
         ...state,
         storiesId: action.payload,
-        loading: false,
+        loadingStories: false,
       };
     case "[Stories] Perform Get Stories Error":
-    case "[Stories] Perform Get Story Detail Error":
       return {
         ...state,
         error: action.payload,
-        loading: false,
+        loadingStories: false,
       };
-    case "[Stories] Perform Get Story Detail Success":
+    case "[Stories] Perform Get Stories Detail":
       return {
         ...state,
-        loading: false,
-        storiesDictionary: addStory(state.storiesDictionary, action.payload),
+        loadingStoriesDetail: true,
+      };
+    case "[Stories] Perform Get Stories Detail Success":
+      return {
+        ...state,
+        loadingStoriesDetail: false,
+        storiesDictionary: addStories(state.storiesDictionary, action.payload),
+      };
+    case "[Stories] Perform Get Stories Detail Error":
+      return {
+        ...state,
+        loadingStoriesDetail: false,
+        error: action.payload,
+      };
+    case "[Stories] Select Stories":
+      return {
+        ...state,
+        selectedStories: action.payload,
       };
     default:
       return state;
   }
 }
 
-const addStory = (
+const addStories = (
   storedStories: StoryDictionary<Story>,
-  story: Story
+  stories: Story[]
 ): StoryDictionary<Story> => {
   const storiesCopy = { ...storedStories };
-  storiesCopy[story.id] = story;
+  stories.forEach((story) => {
+    storiesCopy[story.id] = story;
+  });
   return storiesCopy;
 };
 const storiesState = (state: AppState): StoriesState => state.storiesState;
@@ -74,5 +94,28 @@ export const getStoriesError = createSelector(
 );
 export const getStoriesLoading = createSelector(
   storiesState,
-  (slice) => slice.loading
+  (slice) => slice.loadingStories
+);
+
+export const getSelectedStories = createSelector(
+  storiesState,
+  (slice) => slice.selectedStories
+);
+export const getStoriesDictionary = createSelector(
+  storiesState,
+  (slice) => slice.storiesDictionary
+);
+export const getLoadingStoriesDetail = createSelector(
+  storiesState,
+  (slice) => slice.loadingStoriesDetail
+);
+export const getSelectedStoriesFromDictionary = createSelector(
+  getSelectedStories,
+  getStoriesDictionary,
+  getLoadingStoriesDetail,
+  (selectedStories, storiesDictionary, loadingStoriesDetail) => {
+    return !loadingStoriesDetail
+      ? selectedStories.map((id) => storiesDictionary[id])
+      : [];
+  }
 );

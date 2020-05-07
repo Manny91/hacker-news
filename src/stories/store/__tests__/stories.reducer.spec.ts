@@ -5,18 +5,20 @@ import {
   PERFORM_GET_STORIES_SUCCESS,
   GetStoriesErrorAction,
   PERFORM_GET_STORIES_ERROR,
-  GetStoryDetailAction,
-  PERFORM_GET_STORY_DETAIL,
-  PERFORM_GET_STORY_DETAIL_SUCCESS,
-  GetStoryDetailSuccessAction,
+  PERFORM_GET_STORIES_DETAIL,
+  GetStoriesDetailAction,
+  GetStoriesDetailSuccessAction,
+  PERFORM_GET_STORIES_DETAIL_SUCCESS,
+  GetStoriesDetailErrorAction,
+  PERFORM_GET_STORIES_DETAIL_ERROR,
 } from "./../stories.actions";
-import { AppState } from "../../../store";
-import { OutputSelector } from "reselect";
 import storiesReducer, { StoriesState } from "../stories.reducer";
 import { Story } from "../../services/stories.service";
 
 const defaultState: StoriesState = {
-  loading: true,
+  loadingStories: true,
+  loadingStoriesDetail: false,
+  selectedStories: [],
   error: "",
   storiesId: [],
   storiesDictionary: {},
@@ -28,7 +30,7 @@ describe("Stories Reducer", () => {
     const action: GetStoriesAction = { type: PERFORM_GET_STORIES };
     const expectedState = {
       ...defaultState,
-      loading: true,
+      loadingStories: true,
     };
 
     const actualState = storiesReducer(defaultState, action);
@@ -43,7 +45,7 @@ describe("Stories Reducer", () => {
     };
     const expectedState: StoriesState = {
       ...defaultState,
-      loading: false,
+      loadingStories: false,
       storiesId,
     };
 
@@ -60,7 +62,7 @@ describe("Stories Reducer", () => {
     };
     const expectedState: StoriesState = {
       ...defaultState,
-      loading: false,
+      loadingStories: false,
       error: payload,
     };
 
@@ -68,21 +70,21 @@ describe("Stories Reducer", () => {
     expect(actualState).toEqual(expectedState);
   });
 
-  it("Sets the expected state for performing GetStoryDetailAction", () => {
-    const action: GetStoryDetailAction = {
-      type: PERFORM_GET_STORY_DETAIL,
-      payload: 1,
+  it("Sets the expected state for performing GetStoriesDetailAction", () => {
+    const action: GetStoriesDetailAction = {
+      type: PERFORM_GET_STORIES_DETAIL,
+      payload: [1, 2, 3, 4, 5],
     };
     const expectedState = {
       ...defaultState,
-      loading: true,
+      loadingStoriesDetail: true,
     };
 
     const actualState = storiesReducer(defaultState, action);
     expect(actualState).toEqual(expectedState);
   });
 
-  it("Sets the expected state for performing GetStorySuccessAction", () => {
+  it("Sets the expected state for performing GetStoriesDetailSuccessAction", () => {
     const story = {
       by: "theyeti",
       descendants: 16,
@@ -104,13 +106,14 @@ describe("Stories Reducer", () => {
       type: "story",
       url: "http://reactionwheel.net/2015/01/80s-vc.html",
     } as Story;
-    const action: GetStoryDetailSuccessAction = {
-      type: PERFORM_GET_STORY_DETAIL_SUCCESS,
-      payload: story,
+    const stories = [story];
+    const action: GetStoriesDetailSuccessAction = {
+      type: PERFORM_GET_STORIES_DETAIL_SUCCESS,
+      payload: stories,
     };
     const expectedState: StoriesState = {
       ...defaultState,
-      loading: false,
+      loadingStoriesDetail: false,
       storiesDictionary: { 9129911: { ...story } },
     };
 
@@ -118,16 +121,16 @@ describe("Stories Reducer", () => {
     expect(actualState).toEqual(expectedState);
   });
 
-  it("Sets the expected state for performing GetStoriesErrorAction", () => {
+  it("Sets the expected state for performing GetStoriesDetailErrorAction", () => {
     const payload = "error";
 
-    const action: GetStoriesErrorAction = {
-      type: PERFORM_GET_STORIES_ERROR,
+    const action: GetStoriesDetailErrorAction = {
+      type: PERFORM_GET_STORIES_DETAIL_ERROR,
       payload,
     };
     const expectedState: StoriesState = {
       ...defaultState,
-      loading: false,
+      loadingStoriesDetail: false,
       error: payload,
     };
 
