@@ -153,11 +153,14 @@ const PaginationWrapper = styled.div`
   justify-content: flex-end;
 `;
 const TableNews = styled(Table)`
-    .ant-table{
-        min-height: 330px;
-    }
-    tr>td, tr>th, tfoot>tr>td,  tfoot>tr>th { {
-    padding: 15px
+  .ant-table {
+    min-height: 330px;
+  }
+  tr > td,
+  tr > th,
+  tfoot > tr > td,
+  tfoot > tr > th {
+    padding: 15px;
   }
   @media ${(props) => props.theme.media.lg} {
     /* Force table to not be like tables anymore */

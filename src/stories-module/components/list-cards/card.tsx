@@ -105,6 +105,10 @@ const IconBG = styled.div`
   @media ${(props) => props.theme.media.lg} {
     display: none;
   }
+
+  @media ${(props) => props.theme.media.md} {
+    display: flex;
+  }
 `;
 const StyledZap = styled(Zap)`
   height: 18px;
