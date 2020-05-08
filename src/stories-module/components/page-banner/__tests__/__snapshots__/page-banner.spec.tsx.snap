@@ -80,6 +80,18 @@ exports[`PageBanner Component should render properly 1`] = `
   color: #f0f0f0;
 }
 
+@media (max-width:992px) {
+  .c1 {
+    display: none;
+  }
+}
+
+@media (max-width:568px) {
+  .c2 {
+    width: 100%;
+  }
+}
+
 <div>
   <div
     class="c0"

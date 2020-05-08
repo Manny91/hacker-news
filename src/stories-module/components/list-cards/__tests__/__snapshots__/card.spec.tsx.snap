@@ -13,6 +13,10 @@ exports[`Card Component should render properly 1`] = `
   margin-right: 0px;
 }
 
+.c3 {
+  font-size: 20px;
+}
+
 .c2 {
   background-color: #14137d;
   height: 40px;
@@ -34,7 +38,7 @@ exports[`Card Component should render properly 1`] = `
   background-color: #00ffff;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -42,14 +46,14 @@ exports[`Card Component should render properly 1`] = `
   padding: 10px 15px;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c5 {
+.c6 {
   margin: 0px;
   font-weight: bold;
   font-size: 22px;
@@ -57,7 +61,7 @@ exports[`Card Component should render properly 1`] = `
   color: #020202;
 }
 
-.c8 {
+.c9 {
   margin: 0px;
   font-weight: bold;
   font-size: 22px;
@@ -69,11 +73,11 @@ exports[`Card Component should render properly 1`] = `
   color: grey;
 }
 
-.c7 {
+.c8 {
   height: 10px;
 }
 
-.c6 {
+.c7 {
   margin-left: 5px;
 }
 
@@ -92,6 +96,32 @@ exports[`Card Component should render properly 1`] = `
   padding-left: 20px;
 }
 
+@media (max-width:768px) {
+  .c0 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+
+  .c0:last-child {
+    margin-bottom: 0px;
+  }
+}
+
+@media (max-width:992px) {
+  .c2 {
+    display: none;
+  }
+}
+
+@media (max-width:992px) {
+  .c4 {
+    padding: 7px;
+  }
+}
+
 <div>
   <li
     class="c0"
@@ -101,26 +131,47 @@ exports[`Card Component should render properly 1`] = `
     >
       <div
         class="sc-AxirZ c2"
-      />
+      >
+        <span
+          aria-label="line-chart"
+          class="anticon anticon-line-chart c3"
+          role="img"
+        >
+          <svg
+            aria-hidden="true"
+            class=""
+            data-icon="line-chart"
+            fill="currentColor"
+            focusable="false"
+            height="1em"
+            viewBox="64 64 896 896"
+            width="1em"
+          >
+            <path
+              d="M888 792H200V168c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v688c0 4.4 3.6 8 8 8h752c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM305.8 637.7c3.1 3.1 8.1 3.1 11.3 0l138.3-137.6L583 628.5c3.1 3.1 8.2 3.1 11.3 0l275.4-275.3c3.1-3.1 3.1-8.2 0-11.3l-39.6-39.6a8.03 8.03 0 00-11.3 0l-230 229.9L461.4 404a8.03 8.03 0 00-11.3 0L266.3 586.7a8.03 8.03 0 000 11.3l39.5 39.7z"
+            />
+          </svg>
+        </span>
+      </div>
       <div
-        class="c3"
+        class="c4"
       >
         <div>
           <div
-            class="c4"
+            class="c5"
           >
             <p
-              class="c5"
+              class="c6"
             >
               $510
             </p>
             <div
-              class="c6"
+              class="c7"
               style="color: rgb(56, 158, 13);"
             >
               <span
                 aria-label="arrow-up"
-                class="anticon anticon-arrow-up c7"
+                class="anticon anticon-arrow-up c8"
                 role="img"
               >
                 <svg
@@ -145,7 +196,7 @@ exports[`Card Component should render properly 1`] = `
             </div>
           </div>
           <p
-            class="c8"
+            class="c9"
           >
             revenue
           </p>

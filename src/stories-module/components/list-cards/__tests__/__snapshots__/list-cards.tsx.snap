@@ -13,7 +13,7 @@ exports[`ListCards Component should render properly 1`] = `
   margin-right: 0px;
 }
 
-.c12 {
+.c13 {
   background-color: #14137d;
   height: 40px;
   width: 40px;
@@ -33,8 +33,20 @@ exports[`ListCards Component should render properly 1`] = `
   border-radius: 7px;
 }
 
-.c11 {
+.c12 {
   height: 18px;
+}
+
+.c4 {
+  font-size: 20px;
+}
+
+.c15 {
+  font-size: 20px;
+}
+
+.c14 {
+  font-size: 20px;
 }
 
 .c3 {
@@ -58,7 +70,7 @@ exports[`ListCards Component should render properly 1`] = `
   background-color: #00ffff;
 }
 
-.c10 {
+.c11 {
   background-color: #14137d;
   height: 40px;
   width: 40px;
@@ -79,7 +91,7 @@ exports[`ListCards Component should render properly 1`] = `
   background-color: #4285f4;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -87,14 +99,14 @@ exports[`ListCards Component should render properly 1`] = `
   padding: 10px 15px;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c6 {
+.c7 {
   margin: 0px;
   font-weight: bold;
   font-size: 22px;
@@ -102,7 +114,7 @@ exports[`ListCards Component should render properly 1`] = `
   color: #020202;
 }
 
-.c9 {
+.c10 {
   margin: 0px;
   font-weight: bold;
   font-size: 22px;
@@ -114,11 +126,11 @@ exports[`ListCards Component should render properly 1`] = `
   color: grey;
 }
 
-.c8 {
+.c9 {
   height: 10px;
 }
 
-.c7 {
+.c8 {
   margin-left: 5px;
 }
 
@@ -143,6 +155,53 @@ exports[`ListCards Component should render properly 1`] = `
   display: -ms-flexbox;
   display: flex;
   padding: 0px;
+  width: 100%;
+}
+
+@media (max-width:768px) {
+  .c1 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+
+  .c1:last-child {
+    margin-bottom: 0px;
+  }
+}
+
+@media (max-width:992px) {
+  .c13 {
+    display: none;
+  }
+}
+
+@media (max-width:992px) {
+  .c3 {
+    display: none;
+  }
+}
+
+@media (max-width:992px) {
+  .c11 {
+    display: none;
+  }
+}
+
+@media (max-width:992px) {
+  .c5 {
+    padding: 7px;
+  }
+}
+
+@media (max-width:768px) {
+  .c0 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
 }
 
 <div>
@@ -157,26 +216,47 @@ exports[`ListCards Component should render properly 1`] = `
       >
         <div
           class="c3"
-        />
+        >
+          <span
+            aria-label="line-chart"
+            class="anticon anticon-line-chart c4"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              class=""
+              data-icon="line-chart"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M888 792H200V168c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v688c0 4.4 3.6 8 8 8h752c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM305.8 637.7c3.1 3.1 8.1 3.1 11.3 0l138.3-137.6L583 628.5c3.1 3.1 8.2 3.1 11.3 0l275.4-275.3c3.1-3.1 3.1-8.2 0-11.3l-39.6-39.6a8.03 8.03 0 00-11.3 0l-230 229.9L461.4 404a8.03 8.03 0 00-11.3 0L266.3 586.7a8.03 8.03 0 000 11.3l39.5 39.7z"
+              />
+            </svg>
+          </span>
+        </div>
         <div
-          class="c4"
+          class="c5"
         >
           <div>
             <div
-              class="c5"
+              class="c6"
             >
               <p
-                class="c6"
+                class="c7"
               >
                 $510
               </p>
               <div
-                class="c7"
+                class="c8"
                 style="color: rgb(56, 158, 13);"
               >
                 <span
                   aria-label="arrow-up"
-                  class="anticon anticon-arrow-up c8"
+                  class="anticon anticon-arrow-up c9"
                   role="img"
                 >
                   <svg
@@ -201,7 +281,7 @@ exports[`ListCards Component should render properly 1`] = `
               </div>
             </div>
             <p
-              class="c9"
+              class="c10"
             >
               revenue
             </p>
@@ -216,33 +296,33 @@ exports[`ListCards Component should render properly 1`] = `
         class="c2"
       >
         <div
-          class="c10"
+          class="c11"
         >
           <svg
-            class="c11"
+            class="c12"
           >
             zap.svg
           </svg>
         </div>
         <div
-          class="c4"
+          class="c5"
         >
           <div>
             <div
-              class="c5"
+              class="c6"
             >
               <p
-                class="c6"
+                class="c7"
               >
                 12.2M
               </p>
               <div
-                class="c7"
+                class="c8"
                 style="color: rgb(56, 158, 13);"
               >
                 <span
                   aria-label="arrow-up"
-                  class="anticon anticon-arrow-up c8"
+                  class="anticon anticon-arrow-up c9"
                   role="img"
                 >
                   <svg
@@ -267,7 +347,7 @@ exports[`ListCards Component should render properly 1`] = `
               </div>
             </div>
             <p
-              class="c9"
+              class="c10"
             >
               impressions
             </p>
@@ -282,27 +362,48 @@ exports[`ListCards Component should render properly 1`] = `
         class="c2"
       >
         <div
-          class="c12"
-        />
+          class="c13"
+        >
+          <span
+            aria-label="global"
+            class="anticon anticon-global c14"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              class=""
+              data-icon="global"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M854.4 800.9c.2-.3.5-.6.7-.9C920.6 722.1 960 621.7 960 512s-39.4-210.1-104.8-288c-.2-.3-.5-.5-.7-.8-1.1-1.3-2.1-2.5-3.2-3.7-.4-.5-.8-.9-1.2-1.4l-4.1-4.7-.1-.1c-1.5-1.7-3.1-3.4-4.6-5.1l-.1-.1c-3.2-3.4-6.4-6.8-9.7-10.1l-.1-.1-4.8-4.8-.3-.3c-1.5-1.5-3-2.9-4.5-4.3-.5-.5-1-1-1.6-1.5-1-1-2-1.9-3-2.8-.3-.3-.7-.6-1-1C736.4 109.2 629.5 64 512 64s-224.4 45.2-304.3 119.2c-.3.3-.7.6-1 1-1 .9-2 1.9-3 2.9-.5.5-1 1-1.6 1.5-1.5 1.4-3 2.9-4.5 4.3l-.3.3-4.8 4.8-.1.1c-3.3 3.3-6.5 6.7-9.7 10.1l-.1.1c-1.6 1.7-3.1 3.4-4.6 5.1l-.1.1c-1.4 1.5-2.8 3.1-4.1 4.7-.4.5-.8.9-1.2 1.4-1.1 1.2-2.1 2.5-3.2 3.7-.2.3-.5.5-.7.8C103.4 301.9 64 402.3 64 512s39.4 210.1 104.8 288c.2.3.5.6.7.9l3.1 3.7c.4.5.8.9 1.2 1.4l4.1 4.7c0 .1.1.1.1.2 1.5 1.7 3 3.4 4.6 5l.1.1c3.2 3.4 6.4 6.8 9.6 10.1l.1.1c1.6 1.6 3.1 3.2 4.7 4.7l.3.3c3.3 3.3 6.7 6.5 10.1 9.6 80.1 74 187 119.2 304.5 119.2s224.4-45.2 304.3-119.2a300 300 0 0010-9.6l.3-.3c1.6-1.6 3.2-3.1 4.7-4.7l.1-.1c3.3-3.3 6.5-6.7 9.6-10.1l.1-.1c1.5-1.7 3.1-3.3 4.6-5 0-.1.1-.1.1-.2 1.4-1.5 2.8-3.1 4.1-4.7.4-.5.8-.9 1.2-1.4a99 99 0 003.3-3.7zm4.1-142.6c-13.8 32.6-32 62.8-54.2 90.2a444.07 444.07 0 00-81.5-55.9c11.6-46.9 18.8-98.4 20.7-152.6H887c-3 40.9-12.6 80.6-28.5 118.3zM887 484H743.5c-1.9-54.2-9.1-105.7-20.7-152.6 29.3-15.6 56.6-34.4 81.5-55.9A373.86 373.86 0 01887 484zM658.3 165.5c39.7 16.8 75.8 40 107.6 69.2a394.72 394.72 0 01-59.4 41.8c-15.7-45-35.8-84.1-59.2-115.4 3.7 1.4 7.4 2.9 11 4.4zm-90.6 700.6c-9.2 7.2-18.4 12.7-27.7 16.4V697a389.1 389.1 0 01115.7 26.2c-8.3 24.6-17.9 47.3-29 67.8-17.4 32.4-37.8 58.3-59 75.1zm59-633.1c11 20.6 20.7 43.3 29 67.8A389.1 389.1 0 01540 327V141.6c9.2 3.7 18.5 9.1 27.7 16.4 21.2 16.7 41.6 42.6 59 75zM540 640.9V540h147.5c-1.6 44.2-7.1 87.1-16.3 127.8l-.3 1.2A445.02 445.02 0 00540 640.9zm0-156.9V383.1c45.8-2.8 89.8-12.5 130.9-28.1l.3 1.2c9.2 40.7 14.7 83.5 16.3 127.8H540zm-56 56v100.9c-45.8 2.8-89.8 12.5-130.9 28.1l-.3-1.2c-9.2-40.7-14.7-83.5-16.3-127.8H484zm-147.5-56c1.6-44.2 7.1-87.1 16.3-127.8l.3-1.2c41.1 15.6 85 25.3 130.9 28.1V484H336.5zM484 697v185.4c-9.2-3.7-18.5-9.1-27.7-16.4-21.2-16.7-41.7-42.7-59.1-75.1-11-20.6-20.7-43.3-29-67.8 37.2-14.6 75.9-23.3 115.8-26.1zm0-370a389.1 389.1 0 01-115.7-26.2c8.3-24.6 17.9-47.3 29-67.8 17.4-32.4 37.8-58.4 59.1-75.1 9.2-7.2 18.4-12.7 27.7-16.4V327zM365.7 165.5c3.7-1.5 7.3-3 11-4.4-23.4 31.3-43.5 70.4-59.2 115.4-21-12-40.9-26-59.4-41.8 31.8-29.2 67.9-52.4 107.6-69.2zM165.5 365.7c13.8-32.6 32-62.8 54.2-90.2 24.9 21.5 52.2 40.3 81.5 55.9-11.6 46.9-18.8 98.4-20.7 152.6H137c3-40.9 12.6-80.6 28.5-118.3zM137 540h143.5c1.9 54.2 9.1 105.7 20.7 152.6a444.07 444.07 0 00-81.5 55.9A373.86 373.86 0 01137 540zm228.7 318.5c-39.7-16.8-75.8-40-107.6-69.2 18.5-15.8 38.4-29.7 59.4-41.8 15.7 45 35.8 84.1 59.2 115.4-3.7-1.4-7.4-2.9-11-4.4zm292.6 0c-3.7 1.5-7.3 3-11 4.4 23.4-31.3 43.5-70.4 59.2-115.4 21 12 40.9 26 59.4 41.8a373.81 373.81 0 01-107.6 69.2z"
+              />
+            </svg>
+          </span>
+        </div>
         <div
-          class="c4"
+          class="c5"
         >
           <div>
             <div
-              class="c5"
+              class="c6"
             >
               <p
-                class="c6"
+                class="c7"
               >
                 37.5%
               </p>
               <div
-                class="c7"
+                class="c8"
                 style="color: rgb(207, 19, 34);"
               >
                 <span
                   aria-label="arrow-up"
-                  class="anticon anticon-arrow-up c8"
+                  class="anticon anticon-arrow-up c9"
                   role="img"
                 >
                   <svg
@@ -327,7 +428,7 @@ exports[`ListCards Component should render properly 1`] = `
               </div>
             </div>
             <p
-              class="c9"
+              class="c10"
             >
               fill-rate
             </p>
@@ -342,27 +443,48 @@ exports[`ListCards Component should render properly 1`] = `
         class="c2"
       >
         <div
-          class="c12"
-        />
+          class="c13"
+        >
+          <span
+            aria-label="deployment-unit"
+            class="anticon anticon-deployment-unit c15"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              class=""
+              data-icon="deployment-unit"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M888.3 693.2c-42.5-24.6-94.3-18-129.2 12.8l-53-30.7V523.6c0-15.7-8.4-30.3-22-38.1l-136-78.3v-67.1c44.2-15 76-56.8 76-106.1 0-61.9-50.1-112-112-112s-112 50.1-112 112c0 49.3 31.8 91.1 76 106.1v67.1l-136 78.3c-13.6 7.8-22 22.4-22 38.1v151.6l-53 30.7c-34.9-30.8-86.8-37.4-129.2-12.8-53.5 31-71.7 99.4-41 152.9 30.8 53.5 98.9 71.9 152.2 41 42.5-24.6 62.7-73 53.6-118.8l48.7-28.3 140.6 81c6.8 3.9 14.4 5.9 22 5.9s15.2-2 22-5.9L674.5 740l48.7 28.3c-9.1 45.7 11.2 94.2 53.6 118.8 53.3 30.9 121.5 12.6 152.2-41 30.8-53.6 12.6-122-40.7-152.9zm-673 138.4a47.6 47.6 0 01-65.2-17.6c-13.2-22.9-5.4-52.3 17.5-65.5a47.6 47.6 0 0165.2 17.6c13.2 22.9 5.4 52.3-17.5 65.5zM522 463.8zM464 234a48.01 48.01 0 0196 0 48.01 48.01 0 01-96 0zm170 446.2l-122 70.3-122-70.3V539.8l122-70.3 122 70.3v140.4zm239.9 133.9c-13.2 22.9-42.4 30.8-65.2 17.6-22.8-13.2-30.7-42.6-17.5-65.5s42.4-30.8 65.2-17.6c22.9 13.2 30.7 42.5 17.5 65.5z"
+              />
+            </svg>
+          </span>
+        </div>
         <div
-          class="c4"
+          class="c5"
         >
           <div>
             <div
-              class="c5"
+              class="c6"
             >
               <p
-                class="c6"
+                class="c7"
               >
                 $2.4
               </p>
               <div
-                class="c7"
+                class="c8"
                 style="color: rgb(56, 158, 13);"
               >
                 <span
                   aria-label="arrow-up"
-                  class="anticon anticon-arrow-up c8"
+                  class="anticon anticon-arrow-up c9"
                   role="img"
                 >
                   <svg
@@ -387,7 +509,7 @@ exports[`ListCards Component should render properly 1`] = `
               </div>
             </div>
             <p
-              class="c9"
+              class="c10"
             >
               ecpm
             </p>

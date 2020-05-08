@@ -1,14 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Menu Component should render properly 1`] = `
-.c2 {
+.c3 {
   list-style-type: none;
   text-align: center;
   margin: 20px 0px 0px;
   cursor: pointer;
 }
 
-.c4 {
+.c3.active {
+  font-weight: bold;
+}
+
+.c3.active svg {
+  color: #14137d;
+}
+
+.c5 {
   font-size: 10px;
   margin-top: 5px;
   color: #020202;
@@ -37,30 +45,53 @@ exports[`Menu Component should render properly 1`] = `
   margin: 0px;
 }
 
-.c7 {
+.c8 {
   color: #4285f4;
   font-size: 26px;
 }
 
-.c3 {
+.c4 {
   text-align: center;
   margin-bottom: 20px;
   cursor: pointer;
 }
 
-.c3 svg {
+.c4 svg {
   height: 30px;
   width: 30px;
-}
-
-.c5 {
-  color: #4285f4;
-  font-size: 26px;
 }
 
 .c6 {
   color: #4285f4;
   font-size: 26px;
+}
+
+.c7 {
+  color: #4285f4;
+  font-size: 26px;
+}
+
+@media (max-width:992px) {
+  .c3 {
+    margin: 0px 20px 0px;
+  }
+}
+
+@media (max-width:992px) {
+  .c1 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media (max-width:992px) {
+  .c2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 <div>
@@ -71,28 +102,28 @@ exports[`Menu Component should render properly 1`] = `
       class="c1"
     >
       <div
-        class=""
+        class="c2"
       >
         <li
-          class="c2"
+          class="c3"
         >
           <div
-            class="c3"
+            class="c4"
           >
             <svg>
               logo.svg
             </svg>
           </div>
           <p
-            class="c4"
+            class="c5"
           />
         </li>
         <li
-          class="c2"
+          class="c3 active"
         >
           <span
             aria-label="align-left"
-            class="anticon anticon-align-left c5"
+            class="anticon anticon-align-left c6"
             role="img"
           >
             <svg
@@ -111,17 +142,17 @@ exports[`Menu Component should render properly 1`] = `
             </svg>
           </span>
           <p
-            class="c4"
+            class="c5"
           >
             Top Stories
           </p>
         </li>
         <li
-          class="c2"
+          class="c3"
         >
           <span
             aria-label="area-chart"
-            class="anticon anticon-area-chart c6"
+            class="anticon anticon-area-chart c7"
             role="img"
           >
             <svg
@@ -140,18 +171,18 @@ exports[`Menu Component should render properly 1`] = `
             </svg>
           </span>
           <p
-            class="c4"
+            class="c5"
           >
             Most Recent
           </p>
         </li>
       </div>
       <li
-        class="c2"
+        class="c3"
       >
         <span
           aria-label="logout"
-          class="anticon anticon-logout c7"
+          class="anticon anticon-logout c8"
           role="img"
         >
           <svg
@@ -170,7 +201,7 @@ exports[`Menu Component should render properly 1`] = `
           </svg>
         </span>
         <p
-          class="c4"
+          class="c5"
         >
           Logout
         </p>
