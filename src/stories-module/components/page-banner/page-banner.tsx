@@ -26,10 +26,13 @@ const PageBannerWrapper = styled.div`
   display: flex;
   background-color: ${(props) => props.theme.colors.boldBlue};
 
-  height: 140px;
+  min-height: 140px;
   border-radius: ${(props) => props.theme.borders.normal};
   margin: ${(props) => props.theme.spacing.xl} 0px 25px;
   padding: ${(props) => props.theme.spacing.md};
+  @media ${(props) => props.theme.media.sm} {
+    flex-direction: column;
+  }
 `;
 const BannerImage = styled.div`
   width: 25%;
@@ -58,6 +61,9 @@ const ButtonWrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 25%;
+  @media ${(props) => props.theme.media.sm} {
+    width: 50%;
+  }
 `;
 const styleButton = css`
   background-color: ${(props) => props.theme.colors.bolderBlue};
@@ -69,7 +75,7 @@ const styleButton = css`
 const ButtonBanner = styled.button`
   ${styleButton}
   width: 160px;
-  height: 40px;
+  min-height: 40px;
   border-radius: ${(props) => props.theme.borders.normal};
   &:hover {
     ${styleButton}

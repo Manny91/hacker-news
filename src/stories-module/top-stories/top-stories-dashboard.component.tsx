@@ -38,6 +38,9 @@ const TopStoriesDashboardComponent = ({
       title: "Title",
       dataIndex: "title",
       key: "title",
+      render: (title: string) => (
+        <TableStringLimiter> {title}</TableStringLimiter>
+      ),
     },
     {
       title: "Score",
@@ -60,7 +63,12 @@ const TopStoriesDashboardComponent = ({
         </TimeDisplay>
       ),
     },
-    { title: "Url", dataIndex: "url", key: "url" },
+    {
+      title: "Url",
+      dataIndex: "url",
+      key: "url",
+      render: (url: string) => <TableStringLimiter>{url}</TableStringLimiter>,
+    },
   ];
 
   useEffect(() => {
@@ -130,7 +138,15 @@ const PageContainer = styled.section`
   margin: 0px ${(props) => props.theme.spacing.md};
   @media ${(props) => props.theme.media.lg} {
     margin: 0px;
-    padding: ${(props) => props.theme.spacing.md};
+    padding: 15px;
+  }
+`;
+const TableStringLimiter = styled.div`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  @media ${(props) => props.theme.media.md} {
+    max-width: 320px;
   }
 `;
 const PageTopContent = styled.div`
