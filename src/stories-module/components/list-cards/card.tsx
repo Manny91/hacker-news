@@ -65,6 +65,14 @@ const CardItem = styled.li`
   &:last-child {
     margin-right: 0px;
   }
+  @media ${(props) => props.theme.media.md} {
+    flex-direction: column;
+    margin-right: 0px;
+    margin-bottom ${(props) => props.theme.spacing.md};
+    &:last-child {
+        margin-bottom: 0px;
+    }
+  }
 `;
 const IconBG = styled.div`
   background-color: ${(props) => props.theme.colors.bolderBlue};
@@ -75,6 +83,9 @@ const IconBG = styled.div`
   justify-content: center;
   color: ${(props) => props.theme.colors.almostWhite};
   border-radius: ${(props) => props.theme.borders.normal};
+  @media ${(props) => props.theme.media.lg} {
+    display: none;
+  }
 `;
 const StyledZap = styled(Zap)`
   height: 18px;
@@ -88,6 +99,9 @@ const IconColdBlueBG = styled(IconBG)`
 const CardTextContent = styled.div`
   display: flex;
   padding: ${(props) => props.theme.spacing.sm} 15px;
+  @media ${(props) => props.theme.media.lg} {
+    padding: 7px;
+  }
 `;
 const Text = styled.div`
   display: flex;

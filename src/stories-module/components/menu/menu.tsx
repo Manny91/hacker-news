@@ -13,7 +13,11 @@ const MenuPanel = () => {
       <List>
         <Top>
           <MenuItem icon={<HomeIcon />} />
-          <MenuItem icon={<TopStoriesIcon />} text="Top Stories" />
+          <MenuItem
+            active={true}
+            icon={<TopStoriesIcon />}
+            text="Top Stories"
+          />
           <MenuItem icon={<MostRecentStoriesIcon />} text="Most Recent" />
         </Top>
         <MenuItem icon={<LogoutIcon />} text="Logout" />
@@ -33,6 +37,9 @@ const List = styled.ul`
   padding: ${(props) => props.theme.spacing.md} 0px;
   height: 100%;
   margin: 0px;
+  @media ${(props) => props.theme.media.lg} {
+    flex-direction: row;
+  }
 `;
 const cssIcon = css`
   color: ${(props) => props.theme.colors.coldBlue};
@@ -64,6 +71,10 @@ const TopStoriesIcon = styled(AlignLeftOutlined)`
 const MostRecentStoriesIcon = styled(AreaChartOutlined)`
   ${cssIcon}
 `;
-const Top = styled.div``;
+const Top = styled.div`
+  @media ${(props) => props.theme.media.lg} {
+    display: flex;
+  }
+`;
 
 export default MenuPanel;

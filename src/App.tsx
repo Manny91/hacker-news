@@ -41,6 +41,11 @@ const PageContainer = styled.div`
   height: 100vh;
   grid-template-columns: 85px auto;
   grid-template-areas: "menu container";
+  @media ${(props) => props.theme.media.lg} {
+    grid-template-columns: auto;
+    grid-template-rows: 85px auto;
+    grid-template-areas: "menu" "container";
+  }
 `;
 const MenuPanelWrapper = styled.div`
   grid-area: menu;

@@ -9,11 +9,11 @@ export const theme = {
     lightGrey: "#f0f0f0",
   },
   media: {
-    sm: `(min-width: 568px)`,
-    md: `(min-width: 768px)`,
-    lg: `(min-width: 992px)`,
-    xl: `(min-width: 1366px)`,
-    xxl: `(min-width: 1920px)`,
+    sm: `(max-width: 568px)`,
+    md: `(max-width: 768px)`,
+    lg: `(max-width: 992px)`,
+    xl: `(max-width: 1366px)`,
+    xxl: `(max-width: 1920px)`,
   },
   spacing: {
     xs: "5px",

@@ -23,4 +23,8 @@ export default ListCards;
 const List = styled.ul`
   display: flex;
   padding: 0px;
+  width: 100%;
+  @media ${(props) => props.theme.media.md} {
+    flex-direction: column;
+  }
 `;

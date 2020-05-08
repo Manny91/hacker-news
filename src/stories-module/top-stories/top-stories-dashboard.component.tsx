@@ -7,7 +7,6 @@ import moment from "moment";
 import styled, { css } from "../../styled-components";
 import PageBanner from "../components/page-banner/page-banner";
 import ListCards from "../components/list-cards/list-cards";
-
 const TopStoriesDashboardComponent = ({
   storiesId,
   getNews,
@@ -90,7 +89,7 @@ const TopStoriesDashboardComponent = ({
         <Divider></Divider>
       </PageTopContent>
 
-      <Table
+      <TableNews
         pagination={false}
         columns={columnsData}
         dataSource={data}
@@ -98,11 +97,11 @@ const TopStoriesDashboardComponent = ({
         onRow={(record) => {
           return {
             onClick: () => {
-              handleClickRow(record);
+              handleClickRow(record as Story);
             },
           };
         }}
-      ></Table>
+      ></TableNews>
       <PaginationWrapper>
         <Pagination
           pageSize={stepSize}
@@ -122,22 +121,94 @@ const PageContainer = styled.section`
   height: 100%;
   flex-direction: column;
   margin: 0px ${(props) => props.theme.spacing.md};
+  @media ${(props) => props.theme.media.lg} {
+    margin: 0px;
+    padding: ${(props) => props.theme.spacing.md};
+  }
 `;
 const PageTopContent = styled.div`
   margin: 0px 12%;
+  @media ${(props) => props.theme.media.lg} {
+    margin: 0px;
+  }
 `;
 const PageOverview = styled.div`
   margin: 0px;
-  ${(props) => props.theme.spacing.lg};
 `;
 
 const TimeDisplay = styled.div`
   width: 100px;
 `;
 const PaginationWrapper = styled.div`
-  margin: ${(props) => props.theme.spacing.sm};
+  margin: ${(props) => props.theme.spacing.md};
   align-items: right;
   display: flex;
   justify-content: flex-end;
+`;
+
+const TableNews = styled(Table)`
+  @media ${(props) => props.theme.media.lg} {
+    /* Force table to not be like tables anymore */
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+      display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+
+    tr {
+      border: 1px solid #ccc;
+    }
+
+    td {
+      /* Behave  like a "row" */
+      border: none;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      padding-left: 50%;
+    }
+
+    td:before {
+      /* Now like a table header */
+      position: relativer;
+      /* Top/left values mimic padding */
+      top: 0px;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+    }
+
+    /*
+	Label the data
+	*/
+    td:nth-of-type(1):before {
+      content: "Author:";
+    }
+    td:nth-of-type(2):before {
+      content: "Title:";
+    }
+    td:nth-of-type(3):before {
+      content: "Score:";
+    }
+    td:nth-of-type(4):before {
+      content: "Comments_count:";
+    }
+    td:nth-of-type(5):before {
+      content: "Time:";
+    }
+    td:nth-of-type(6):before {
+      content: "Url:";
+    }
+  }
 `;
 export default TopStoriesDashboardComponent;

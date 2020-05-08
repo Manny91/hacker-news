@@ -33,12 +33,18 @@ const PageBannerWrapper = styled.div`
 `;
 const BannerImage = styled.div`
   width: 25%;
+  @media ${(props) => props.theme.media.lg} {
+    display: none;
+  }
 `;
 const BannerText = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
   width: 50%;
+  @media ${(props) => props.theme.media.sm} {
+    width: 100%;
+  }
 `;
 const Title = styled.h1`
   font-size: 24px;
