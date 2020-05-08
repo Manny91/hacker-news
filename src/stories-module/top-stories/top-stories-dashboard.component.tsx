@@ -23,9 +23,9 @@ const TopStoriesDashboardComponent = ({
     setCurrentPageIndex(Math.max(0, page - 1));
   };
 
-  const handleClickRow = (story: Story) => {
+  const handleClickRow = ({ url }: Story) => {
     if (url) {
-      window.open(story.url, "_blank");
+      window.open(url, "_blank");
     }
   };
   const columnsData = [
