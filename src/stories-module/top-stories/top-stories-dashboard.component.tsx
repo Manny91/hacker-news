@@ -143,7 +143,7 @@ const PageContainer = styled.section`
 `;
 const TableStringLimiter = styled.div`
   @media ${(props) => props.theme.media.md} {
-    max-width: 280px;
+    max-width: 260px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
