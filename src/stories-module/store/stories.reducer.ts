@@ -49,6 +49,7 @@ export default function storiesReducer(
     case "[Stories] Perform Get Stories Detail":
       return {
         ...state,
+        error: "",
         loadingStoriesDetail: true,
       };
     case "[Stories] Perform Get Stories Detail Success":

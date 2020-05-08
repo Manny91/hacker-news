@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { TopStoriesDashboardContainerProps } from "./top-stories-dashboard.container.component";
-import { Table, Pagination, Divider } from "antd";
+import { Table, Pagination, Divider, notification } from "antd";
 
 import { Story } from "../services/stories.service";
 import moment from "moment";
@@ -14,6 +14,7 @@ const TopStoriesDashboardComponent = ({
   selectedStories,
   selectStories,
   loadingStoriesDetail,
+  error,
 }: TopStoriesDashboardContainerProps) => {
   const stepSize = 5;
   const [currentPageIndex, setCurrentPageIndex] = useState(0);
@@ -65,6 +66,14 @@ const TopStoriesDashboardComponent = ({
   }, [getNews]);
 
   useEffect(() => {
+    if (error && !selectedStories[0]) {
+      notification["error"]({
+        message: "Error!",
+        description: error,
+      });
+    }
+  }, [error, selectedStories]);
+  useEffect(() => {
     const step = Math.max(0, currentPageIndex * stepSize);
     const storiesIdToLoad = storiesId.slice(step, step + stepSize);
     selectStories(storiesIdToLoad);
@@ -85,8 +94,8 @@ const TopStoriesDashboardComponent = ({
         loading={loadingStoriesDetail}
         pagination={false}
         columns={columnsData}
-        dataSource={selectedStories.map((item) => {
-          return { ...item, key: item.id };
+        dataSource={selectedStories.map((item, index) => {
+          return { ...item, key: index };
         })}
         rowClassName="story-table-row"
         onRow={(record) => {
