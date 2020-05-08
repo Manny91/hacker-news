@@ -1,4 +1,7 @@
-import { getSelectedStoriesFromDictionary } from "../store/stories.reducer";
+import {
+  getSelectedStoriesFromDictionary,
+  getLoadingStoriesDetail,
+} from "../store/stories.reducer";
 import {
   getStoriesId,
   getStoriesError,
@@ -24,6 +27,7 @@ interface MapStateToProps {
   error: string;
   loadingStories: boolean;
   selectedStories: Story[];
+  loadingStoriesDetail: boolean;
 }
 
 export type TopStoriesDashboardContainerProps = DispatchProps & MapStateToProps;
@@ -33,6 +37,7 @@ function mapStateToProps(state: AppState): MapStateToProps {
     storiesId: getStoriesId(state),
     error: getStoriesError(state),
     loadingStories: getStoriesLoading(state),
+    loadingStoriesDetail: getLoadingStoriesDetail(state),
     selectedStories: getSelectedStoriesFromDictionary(state),
   };
 }

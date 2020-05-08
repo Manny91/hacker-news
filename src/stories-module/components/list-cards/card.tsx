@@ -1,6 +1,11 @@
 import React from "react";
-import styled from "../../../styled-components";
-import { ArrowUpOutlined } from "@ant-design/icons";
+import styled, { css } from "../../../styled-components";
+import {
+  ArrowUpOutlined,
+  LineChartOutlined,
+  DeploymentUnitOutlined,
+  GlobalOutlined,
+} from "@ant-design/icons";
 import { ReactComponent as Zap } from "../../../assets/zap.svg";
 
 import { green } from "@ant-design/colors";
@@ -18,15 +23,29 @@ const Card = ({ type, value, percentage, percentageColor }: CardProps) => {
   const getIconBGByType = (type: CardType) => {
     switch (type) {
       case "revenue":
-        return <IconTealTitanBG></IconTealTitanBG>;
+        return (
+          <IconTealTitanBG>
+            <RevenueIcon />
+          </IconTealTitanBG>
+        );
       case "impressions":
         return (
           <IconColdBlueBG>
             <StyledZap />
           </IconColdBlueBG>
         );
+      case "ecpm":
+        return (
+          <IconBG>
+            <ECPMIcon />
+          </IconBG>
+        );
       default:
-        return <IconBG />;
+        return (
+          <IconBG>
+            <FillRateIcon />
+          </IconBG>
+        );
     }
   };
   const renderPercentage = (percentage: number, percentageColor?: string) => {
@@ -89,6 +108,18 @@ const IconBG = styled.div`
 `;
 const StyledZap = styled(Zap)`
   height: 18px;
+`;
+const cssIcon = css`
+  font-size: 20px;
+`;
+const RevenueIcon = styled(LineChartOutlined)`
+  ${cssIcon}
+`;
+const ECPMIcon = styled(DeploymentUnitOutlined)`
+  ${cssIcon}
+`;
+const FillRateIcon = styled(GlobalOutlined)`
+  ${cssIcon}
 `;
 const IconTealTitanBG = styled(IconBG)`
   background-color: ${(props) => props.theme.colors.tealTitan};

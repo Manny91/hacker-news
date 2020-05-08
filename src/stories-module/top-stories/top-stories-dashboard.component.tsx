@@ -4,7 +4,7 @@ import { Table, Pagination, Divider } from "antd";
 
 import { Story } from "../services/stories.service";
 import moment from "moment";
-import styled, { css } from "../../styled-components";
+import styled from "../../styled-components";
 import PageBanner from "../components/page-banner/page-banner";
 import ListCards from "../components/list-cards/list-cards";
 const TopStoriesDashboardComponent = ({
@@ -13,10 +13,10 @@ const TopStoriesDashboardComponent = ({
   loadingStories,
   selectedStories,
   selectStories,
+  loadingStoriesDetail,
 }: TopStoriesDashboardContainerProps) => {
   const stepSize = 5;
   const [currentPageIndex, setCurrentPageIndex] = useState(0);
-  const [data, setData] = useState([] as Story[]);
 
   const paginationChange = (page: number) => {
     setCurrentPageIndex(Math.max(0, page - 1));
@@ -62,15 +62,7 @@ const TopStoriesDashboardComponent = ({
 
   useEffect(() => {
     getNews();
-  }, []);
-
-  useEffect(() => {
-    setData(
-      selectedStories.map((item) => {
-        return { ...item, key: item.id };
-      })
-    );
-  }, [selectedStories]);
+  }, [getNews]);
 
   useEffect(() => {
     const step = Math.max(0, currentPageIndex * stepSize);
@@ -90,9 +82,12 @@ const TopStoriesDashboardComponent = ({
       </PageTopContent>
 
       <TableNews
+        loading={loadingStoriesDetail}
         pagination={false}
         columns={columnsData}
-        dataSource={data}
+        dataSource={selectedStories.map((item) => {
+          return { ...item, key: item.id };
+        })}
         rowClassName="story-table-row"
         onRow={(record) => {
           return {
@@ -102,6 +97,7 @@ const TopStoriesDashboardComponent = ({
           };
         }}
       ></TableNews>
+
       <PaginationWrapper>
         <Pagination
           pageSize={stepSize}
@@ -145,8 +141,13 @@ const PaginationWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
 `;
-
 const TableNews = styled(Table)`
+    .ant-table{
+        min-height: 330px;
+    }
+    tr>td, tr>th, tfoot>tr>td,  tfoot>tr>th { {
+    padding: 15px
+  }
   @media ${(props) => props.theme.media.lg} {
     /* Force table to not be like tables anymore */
     table,
