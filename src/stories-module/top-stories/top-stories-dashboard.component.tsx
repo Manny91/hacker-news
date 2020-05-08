@@ -24,7 +24,9 @@ const TopStoriesDashboardComponent = ({
   };
 
   const handleClickRow = (story: Story) => {
-    window.open(story.url, "_blank");
+    if (url) {
+      window.open(story.url, "_blank");
+    }
   };
   const columnsData = [
     {
