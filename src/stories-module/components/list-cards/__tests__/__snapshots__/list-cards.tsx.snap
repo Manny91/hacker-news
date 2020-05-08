@@ -1,0 +1,400 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListCards Component should render properly 1`] = `
+.c1 {
+  margin-right: 40px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  list-style-type: none;
+}
+
+.c1:last-child {
+  margin-right: 0px;
+}
+
+.c12 {
+  background-color: #14137d;
+  height: 40px;
+  width: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #f6f6f6;
+  border-radius: 7px;
+}
+
+.c11 {
+  height: 18px;
+}
+
+.c3 {
+  background-color: #14137d;
+  height: 40px;
+  width: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #f6f6f6;
+  border-radius: 7px;
+  background-color: #00ffff;
+}
+
+.c10 {
+  background-color: #14137d;
+  height: 40px;
+  width: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #f6f6f6;
+  border-radius: 7px;
+  background-color: #4285f4;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 15px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c6 {
+  margin: 0px;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: normal;
+  color: #020202;
+}
+
+.c9 {
+  margin: 0px;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: normal;
+  color: #020202;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 11px;
+  color: grey;
+}
+
+.c8 {
+  height: 10px;
+}
+
+.c7 {
+  margin-left: 5px;
+}
+
+.c2 {
+  background-color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 7px;
+  height: 70px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0px;
+}
+
+<div>
+  <ul
+    class="c0"
+  >
+    <li
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3"
+        />
+        <div
+          class="c4"
+        >
+          <div>
+            <div
+              class="c5"
+            >
+              <p
+                class="c6"
+              >
+                $510
+              </p>
+              <div
+                class="c7"
+                style="color: rgb(56, 158, 13);"
+              >
+                <span
+                  aria-label="arrow-up"
+                  class="anticon anticon-arrow-up c8"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class=""
+                    data-icon="arrow-up"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M868 545.5L536.1 163a31.96 31.96 0 00-48.3 0L156 545.5a7.97 7.97 0 006 13.2h81c4.6 0 9-2 12.1-5.5L474 300.9V864c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V300.9l218.9 252.3c3 3.5 7.4 5.5 12.1 5.5h81c6.8 0 10.5-8 6-13.2z"
+                    />
+                  </svg>
+                </span>
+                <b>
+                  50
+                  %
+                </b>
+              </div>
+            </div>
+            <p
+              class="c9"
+            >
+              revenue
+            </p>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c10"
+        >
+          <svg
+            class="c11"
+          >
+            zap.svg
+          </svg>
+        </div>
+        <div
+          class="c4"
+        >
+          <div>
+            <div
+              class="c5"
+            >
+              <p
+                class="c6"
+              >
+                12.2M
+              </p>
+              <div
+                class="c7"
+                style="color: rgb(56, 158, 13);"
+              >
+                <span
+                  aria-label="arrow-up"
+                  class="anticon anticon-arrow-up c8"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class=""
+                    data-icon="arrow-up"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M868 545.5L536.1 163a31.96 31.96 0 00-48.3 0L156 545.5a7.97 7.97 0 006 13.2h81c4.6 0 9-2 12.1-5.5L474 300.9V864c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V300.9l218.9 252.3c3 3.5 7.4 5.5 12.1 5.5h81c6.8 0 10.5-8 6-13.2z"
+                    />
+                  </svg>
+                </span>
+                <b>
+                  12
+                  %
+                </b>
+              </div>
+            </div>
+            <p
+              class="c9"
+            >
+              impressions
+            </p>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c12"
+        />
+        <div
+          class="c4"
+        >
+          <div>
+            <div
+              class="c5"
+            >
+              <p
+                class="c6"
+              >
+                37.5%
+              </p>
+              <div
+                class="c7"
+                style="color: rgb(207, 19, 34);"
+              >
+                <span
+                  aria-label="arrow-up"
+                  class="anticon anticon-arrow-up c8"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class=""
+                    data-icon="arrow-up"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M868 545.5L536.1 163a31.96 31.96 0 00-48.3 0L156 545.5a7.97 7.97 0 006 13.2h81c4.6 0 9-2 12.1-5.5L474 300.9V864c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V300.9l218.9 252.3c3 3.5 7.4 5.5 12.1 5.5h81c6.8 0 10.5-8 6-13.2z"
+                    />
+                  </svg>
+                </span>
+                <b>
+                  12
+                  %
+                </b>
+              </div>
+            </div>
+            <p
+              class="c9"
+            >
+              fill-rate
+            </p>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c12"
+        />
+        <div
+          class="c4"
+        >
+          <div>
+            <div
+              class="c5"
+            >
+              <p
+                class="c6"
+              >
+                $2.4
+              </p>
+              <div
+                class="c7"
+                style="color: rgb(56, 158, 13);"
+              >
+                <span
+                  aria-label="arrow-up"
+                  class="anticon anticon-arrow-up c8"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class=""
+                    data-icon="arrow-up"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M868 545.5L536.1 163a31.96 31.96 0 00-48.3 0L156 545.5a7.97 7.97 0 006 13.2h81c4.6 0 9-2 12.1-5.5L474 300.9V864c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V300.9l218.9 252.3c3 3.5 7.4 5.5 12.1 5.5h81c6.8 0 10.5-8 6-13.2z"
+                    />
+                  </svg>
+                </span>
+                <b>
+                  32
+                  %
+                </b>
+              </div>
+            </div>
+            <p
+              class="c9"
+            >
+              ecpm
+            </p>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+`;

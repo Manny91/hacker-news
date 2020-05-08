@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { TopStoriesDashboardContainerProps } from "./top-stories-dashboard.container.component";
-import { Table, Pagination, Button } from "antd";
+import { Table, Pagination, Divider } from "antd";
 
 import { Story } from "../services/stories.service";
 import moment from "moment";
 import styled, { css } from "../../styled-components";
+import PageBanner from "../components/page-banner/page-banner";
+import ListCards from "../components/list-cards/list-cards";
 
 const TopStoriesDashboardComponent = ({
   storiesId,
@@ -79,18 +81,14 @@ const TopStoriesDashboardComponent = ({
 
   return (
     <PageContainer>
-      <PageBanner>
-        <BannerText>
-          <Title>Welcome Back Gregory</Title>
-          <Subtitle>
-            Nodolor sit amet, consectetur adipisicing elit. Aperiam odio
-            expedita nostrum eius, sapiente commodi in tenetur facilis
-          </Subtitle>
-        </BannerText>
-        <ButtonWrapper>
-          <ButtonBanner>Hide Alert</ButtonBanner>
-        </ButtonWrapper>
-      </PageBanner>
+      <PageTopContent>
+        <PageBanner />
+        <PageOverview>
+          <h2>Overview</h2>
+          <ListCards />
+        </PageOverview>
+        <Divider></Divider>
+      </PageTopContent>
 
       <Table
         pagination={false}
@@ -119,53 +117,20 @@ const TopStoriesDashboardComponent = ({
 };
 
 const PageContainer = styled.section`
-  padding: 0px ${(props) => props.theme.spacing.md};
-  backgorund-color: ${(props) => props.theme.colors.almostWhite};
+  background-color: ${(props) => props.theme.colors.almostWhite};
   display: flex;
   height: 100%;
   flex-direction: column;
+  margin: 0px ${(props) => props.theme.spacing.md};
+`;
+const PageTopContent = styled.div`
+  margin: 0px 12%;
+`;
+const PageOverview = styled.div`
+  margin: 0px;
+  ${(props) => props.theme.spacing.lg};
 `;
 
-const PageBanner = styled.div`
-  display: flex;
-  background-color: ${(props) => props.theme.colors.boldBlue};
-  flex-direction: colum;
-  height: 140px;
-  border-radius: 7px;
-  margin: ${(props) => props.theme.spacing.xl};
-  padding: ${(props) => props.theme.spacing.md};
-`;
-const BannerText = styled.p`
-  display: flex;
-  flex: 2;
-  flex-direction: column;
-`;
-const Title = styled.h1`
-  font-size: 20px;
-  color: ${(props) => props.theme.colors.almostWhite};
-`;
-
-const ButtonWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-const styleButton = css`
-  background-color: ${(props) => props.theme.colors.bolderBlue};
-  border-color: ${(props) => props.theme.colors.bolderBlue};
-  color: ${(props) => props.theme.colors.almostWhite};
-  font-weight: bold;
-`;
-const ButtonBanner = styled(Button)`
-  ${styleButton}
-  &:hover {
-    ${styleButton}
-  }
-`;
-const Subtitle = styled.h3`
-  font-size: 16px;
-  color: ${(props) => props.theme.colors.almostWhite};
-`;
 const TimeDisplay = styled.div`
   width: 100px;
 `;

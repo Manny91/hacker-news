@@ -7,6 +7,7 @@ import { theme } from "./theme";
 import TopStoriesDashboardComponent from "./stories-module/top-stories/top-stories-dashboard.container.component";
 import MenuPanel from "./stories-module/components/menu/menu";
 import "antd/dist/antd.min.css";
+
 import "./App.css";
 
 function App() {
@@ -41,10 +42,10 @@ const PageContainer = styled.div`
   grid-template-columns: 85px auto;
   grid-template-areas: "menu container";
 `;
-const MenuPanelWrapper = styled.section`
+const MenuPanelWrapper = styled.div`
   grid-area: menu;
 `;
-const Container = styled.section`
+const Container = styled.div`
   grid-area: container;
 `;
 export default App;

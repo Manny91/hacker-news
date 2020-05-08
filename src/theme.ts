@@ -6,6 +6,7 @@ export const theme = {
     tealTitan: "#00ffff",
     almostWhite: "#f6f6f6",
     nearlyBlack: "#020202",
+    lightGrey: "#f0f0f0",
   },
   media: {
     sm: `(min-width: 568px)`,
@@ -21,6 +22,9 @@ export const theme = {
     lg: "30px",
     xl: "40px",
     xxl: "50px",
+  },
+  borders: {
+    normal: "7px",
   },
 };
 

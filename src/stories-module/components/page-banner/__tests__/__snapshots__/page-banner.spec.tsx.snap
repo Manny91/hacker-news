@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageBanner Component should render properly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #2a13bd;
+  height: 140px;
+  border-radius: 7px;
+  margin: 40px 0px 25px;
+  padding: 20px;
+}
+
+.c1 {
+  width: 25%;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 50%;
+}
+
+.c3 {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 0px;
+  color: #f6f6f6;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 25%;
+}
+
+.c6 {
+  background-color: #14137d;
+  border-color: #14137d;
+  color: #f6f6f6;
+  font-weight: bold;
+  cursor: pointer;
+  width: 160px;
+  height: 40px;
+  border-radius: 7px;
+}
+
+.c6:hover {
+  background-color: #14137d;
+  border-color: #14137d;
+  color: #f6f6f6;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.c4 {
+  font-size: 15px;
+  width: 100%;
+  color: #f0f0f0;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      Img Placeholder
+    </div>
+    <div
+      class="c2"
+    >
+      <h1
+        class="c3"
+      >
+        Welcome back 
+        <b>
+          Gregory
+        </b>
+      </h1>
+      <p
+        class="c4"
+      >
+        Nodolor sit amet, consectetur adipisicing elit. Aperiam odio expedita nostrum eius, sapiente commodi in tenetur facilis
+      </p>
+    </div>
+    <div
+      class="c5"
+    >
+      <button
+        class="c6"
+      >
+        Hide Alert
+      </button>
+    </div>
+  </div>
+</div>
+`;

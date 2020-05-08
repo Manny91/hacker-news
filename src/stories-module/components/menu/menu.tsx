@@ -6,7 +6,7 @@ import {
   AlignLeftOutlined,
   AreaChartOutlined,
 } from "@ant-design/icons";
-import MenuItem from "../menu-item/menu-item";
+import MenuItem from "./menu-item";
 const MenuPanel = () => {
   return (
     <Nav>
@@ -23,6 +23,7 @@ const MenuPanel = () => {
 };
 const Nav = styled.nav`
   height: 100%;
+  border-right: 1px solid ${(props) => props.theme.colors.lightGrey};
 `;
 const List = styled.ul`
   display: flex;
