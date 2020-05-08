@@ -18,11 +18,7 @@ const Card = ({ type, value, percentage, percentageColor }: CardProps) => {
   const getIconBGByType = (type: CardType) => {
     switch (type) {
       case "revenue":
-        return (
-          <IconTealTitanBG>
-            <Graph />
-          </IconTealTitanBG>
-        );
+        return <IconTealTitanBG></IconTealTitanBG>;
       case "impressions":
         return (
           <IconColdBlueBG>
