@@ -142,11 +142,11 @@ const PageContainer = styled.section`
   }
 `;
 const TableStringLimiter = styled.div`
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   @media ${(props) => props.theme.media.md} {
-    max-width: 320px;
+    max-width: 280px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 `;
 const PageTopContent = styled.div`

@@ -1,9 +1,13 @@
 import React from "react";
 import styled, { css } from "../../../styled-components";
+import { ReactComponent as PuzzleCollab } from "../../../assets/teamwork-puzzle.svg";
+
 const PageBanner = () => {
   return (
     <PageBannerWrapper>
-      <BannerImage>Img Placeholder</BannerImage>
+      <BannerImage>
+        <PuzzleCollab />
+      </BannerImage>
       <BannerText>
         <Title>
           Welcome back <b>Gregory</b>
@@ -36,6 +40,10 @@ const PageBannerWrapper = styled.div`
 `;
 const BannerImage = styled.div`
   width: 25%;
+  svg {
+    height: auto;
+    width: 70%;
+  }
   @media ${(props) => props.theme.media.lg} {
     display: none;
   }
@@ -63,6 +71,7 @@ const ButtonWrapper = styled.div`
   width: 25%;
   @media ${(props) => props.theme.media.sm} {
     width: 50%;
+    justify-content: end;
   }
 `;
 const styleButton = css`
