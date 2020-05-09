@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { css } from "../../../styled-components";
 import { ReactComponent as LogoIcon } from "../../../assets/logo.svg";
+import { useLocation } from "react-router-dom";
 import {
   LogoutOutlined,
   AlignLeftOutlined,
@@ -8,17 +9,24 @@ import {
 } from "@ant-design/icons";
 import MenuItem from "./menu-item";
 const MenuPanel = () => {
+  const { pathname } = useLocation();
+
   return (
     <Nav>
       <List>
         <Top>
           <MenuItem icon={<HomeIcon />} />
           <MenuItem
-            active={true}
+            active={!pathname.match("/most-recent")}
             icon={<TopStoriesIcon />}
             text="Top Stories"
           />
-          <MenuItem icon={<MostRecentStoriesIcon />} text="Most Recent" />
+          <MenuItem
+            icon={<MostRecentStoriesIcon />}
+            to={"/most-recent"}
+            active={!!pathname.match("/most-recent")}
+            text="Most Recent"
+          />
         </Top>
         <MenuItem icon={<LogoutIcon />} text="Logout" />
       </List>

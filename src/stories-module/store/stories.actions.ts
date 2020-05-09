@@ -11,6 +11,14 @@ export const PERFORM_GET_STORIES_DETAIL_SUCCESS =
   "[Stories] Perform Get Stories Detail Success";
 export const PERFORM_GET_STORIES_DETAIL_ERROR =
   "[Stories] Perform Get Stories Detail Error";
+export const PERFORM_GET_MOST_RECENT_STORIES =
+  "[Stories] Perform Get Most Recent Stories";
+export const PERFORM_GET_MOST_RECENT_STORIES_SUCCESS =
+  "[Stories] Perform Get Most Recent Stories Success";
+export const PERFORM_GET_MOST_RECENT_STORIES_ERROR =
+  "[Stories] Perform Get Most Recent Stories Error";
+export const SELECT_MOST_RECENT_STORIES =
+  "[Stories] Select Most Recent Stories";
 
 export type GetStoriesAction = {
   type: "[Stories] Perform Get Stories";
@@ -85,6 +93,46 @@ export const performGetStoriesDetailErrorAction = (
   payload,
 });
 
+export type GetMostRecentStoriesAction = {
+  type: "[Stories] Perform Get Most Recent Stories";
+};
+export const performGetMostRecentStoriesAction = (): GetMostRecentStoriesAction => ({
+  type: PERFORM_GET_MOST_RECENT_STORIES,
+});
+
+export type GetMostRecentStoriesSuccessAction = {
+  type: "[Stories] Perform Get Most Recent Stories Success";
+  payload: number[];
+};
+export const performGetMostRecentStoriesSuccessAction = (
+  payload: number[]
+): GetMostRecentStoriesSuccessAction => ({
+  type: PERFORM_GET_MOST_RECENT_STORIES_SUCCESS,
+  payload,
+});
+
+export type GetMostRecentStoriesErrorAction = {
+  type: "[Stories] Perform Get Most Recent Stories Error";
+  payload: string;
+};
+export const performGetMostRecentStoriesErrorAction = (
+  payload: string
+): GetMostRecentStoriesErrorAction => ({
+  type: PERFORM_GET_MOST_RECENT_STORIES_ERROR,
+  payload,
+});
+
+export type SelectMostRecentStoriesAction = {
+  type: "[Stories] Select Most Recent Stories";
+  payload: number[];
+};
+export const performSelectMostRecentStoriesAction = (
+  payload: number[]
+): SelectMostRecentStoriesAction => ({
+  type: SELECT_MOST_RECENT_STORIES,
+  payload,
+});
+
 export type StoriesActions =
   | GetStoriesAction
   | GetStoriesSuccessAction
@@ -92,4 +140,8 @@ export type StoriesActions =
   | SelectStoriesAction
   | GetStoriesDetailAction
   | GetStoriesDetailSuccessAction
-  | GetStoriesDetailErrorAction;
+  | GetStoriesDetailErrorAction
+  | GetMostRecentStoriesAction
+  | GetMostRecentStoriesSuccessAction
+  | GetMostRecentStoriesErrorAction
+  | SelectMostRecentStoriesAction;

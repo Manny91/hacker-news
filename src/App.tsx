@@ -4,32 +4,35 @@ import { configureStore } from "./store";
 import { Route, BrowserRouter, Switch } from "react-router-dom";
 import styled, { ThemeProvider } from "./styled-components";
 import { theme } from "./theme";
+import MostRecentDashboardComponent from "./stories-module/most-recent/most-recent-dashboard.container.component";
 import TopStoriesDashboardComponent from "./stories-module/top-stories/top-stories-dashboard.container.component";
 import MenuPanel from "./stories-module/components/menu/menu";
 import "antd/dist/antd.min.css";
+import { createBrowserHistory } from "history";
 
 import "./App.css";
 
 function App() {
   const store = configureStore();
+  const history = createBrowserHistory();
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <PageContainer>
-          <MenuPanelWrapper data-testid="menu">
-            <MenuPanel></MenuPanel>
-          </MenuPanelWrapper>
-          <Container>
-            <BrowserRouter>
+          <BrowserRouter>
+            <MenuPanelWrapper data-testid="menu">
+              <MenuPanel></MenuPanel>
+            </MenuPanelWrapper>
+            <Container>
               <Switch>
-                {/* <Route
-                  path="/mostRecent/"
+                <Route
+                  path="/most-recent/"
                   component={MostRecentDashboardComponent}
-                /> */}
+                />
                 <Route component={TopStoriesDashboardComponent} />
               </Switch>
-            </BrowserRouter>
-          </Container>
+            </Container>
+          </BrowserRouter>
         </PageContainer>
       </ThemeProvider>
     </Provider>

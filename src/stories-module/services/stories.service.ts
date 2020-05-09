@@ -19,6 +19,11 @@ export async function getTopStories(): Promise<number[]> {
   return res.json();
 }
 
+export async function getMostRecentStories(): Promise<number[]> {
+  const res = await httpClient.get(`newstories`);
+  return res.json();
+}
+
 export async function getStoryDetail(storyId: number): Promise<Story> {
   const res = await httpClient.get(`item/${storyId}`);
   return res.json();
@@ -27,4 +32,5 @@ export async function getStoryDetail(storyId: number): Promise<Story> {
 export default {
   getTopStories,
   getStoryDetail,
+  getMostRecentStories,
 };

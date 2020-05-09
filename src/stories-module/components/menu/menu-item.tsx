@@ -1,18 +1,21 @@
 import React from "react";
 import styled from "../../../styled-components";
-
+import { Link } from "react-router-dom";
 interface MenuIconProps {
   icon: JSX.Element;
   text?: string;
   active?: boolean;
+  to?: string;
 }
 
-const MenuItem = ({ icon, text, active }: MenuIconProps) => {
+const MenuItem = ({ icon, text, active, to = "/" }: MenuIconProps) => {
   const classStyle = active ? "active" : "";
   return (
     <Item className={classStyle}>
-      {icon}
-      <Text>{text}</Text>
+      <Link to={to}>
+        {icon}
+        <Text>{text}</Text>
+      </Link>
     </Item>
   );
 };

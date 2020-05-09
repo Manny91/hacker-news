@@ -13,6 +13,10 @@ export interface StoriesState {
   storiesDictionary: StoryDictionary<Story>;
   loadingStoriesDetail: boolean;
   selectedStories: number[];
+  mostRecentStoriesId: number[];
+  loadingMostRecentStories: boolean;
+  loadingMostRecentStoriesDetail: boolean;
+  selectedMostRecentStories: number[];
 }
 
 export const initialStoriesState: StoriesState = {
@@ -22,6 +26,10 @@ export const initialStoriesState: StoriesState = {
   storiesDictionary: {},
   loadingStoriesDetail: false,
   selectedStories: [],
+  mostRecentStoriesId: [],
+  loadingMostRecentStories: true,
+  loadingMostRecentStoriesDetail: false,
+  selectedMostRecentStories: [],
 };
 
 export default function storiesReducer(
@@ -69,6 +77,28 @@ export default function storiesReducer(
         ...state,
         selectedStories: action.payload,
       };
+    case "[Stories] Perform Get Most Recent Stories":
+      return {
+        ...state,
+        loadingMostRecentStories: true,
+      };
+    case "[Stories] Perform Get Most Recent Stories Success":
+      return {
+        ...state,
+        mostRecentStoriesId: action.payload,
+        loadingMostRecentStories: false,
+      };
+    case "[Stories] Perform Get Most Recent Stories Error":
+      return {
+        ...state,
+        error: action.payload,
+        loadingMostRecentStories: false,
+      };
+    case "[Stories] Select Most Recent Stories":
+      return {
+        ...state,
+        selectedMostRecentStories: action.payload,
+      };
     default:
       return state;
   }
@@ -114,6 +144,34 @@ export const getSelectedStoriesFromDictionary = createSelector(
   getSelectedStories,
   getStoriesDictionary,
   getLoadingStoriesDetail,
+  (selectedStories, storiesDictionary, loadingStoriesDetail) => {
+    return !loadingStoriesDetail
+      ? selectedStories.map((id) => storiesDictionary[id])
+      : [];
+  }
+);
+
+export const getMostRecentStoriesId = createSelector(
+  storiesState,
+  (slice) => slice.mostRecentStoriesId
+);
+
+export const getMostRecentStoriesLoading = createSelector(
+  storiesState,
+  (slice) => slice.loadingMostRecentStories
+);
+export const getLoadingMostRecentStoriesDetail = createSelector(
+  storiesState,
+  (slice) => slice.loadingMostRecentStoriesDetail
+);
+export const getSelectedMostRecentStories = createSelector(
+  storiesState,
+  (slice) => slice.selectedMostRecentStories
+);
+export const getSelectedMostRecentStoriesFromDictionary = createSelector(
+  getSelectedMostRecentStories,
+  getStoriesDictionary,
+  getLoadingMostRecentStoriesDetail,
   (selectedStories, storiesDictionary, loadingStoriesDetail) => {
     return !loadingStoriesDetail
       ? selectedStories.map((id) => storiesDictionary[id])

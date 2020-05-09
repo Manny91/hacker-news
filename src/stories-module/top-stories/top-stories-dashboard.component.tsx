@@ -99,7 +99,6 @@ const TopStoriesDashboardComponent = ({
         </PageOverview>
         <Divider></Divider>
       </PageTopContent>
-
       <TableNews
         loading={loadingStoriesDetail}
         pagination={false}

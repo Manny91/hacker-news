@@ -27,6 +27,34 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+---
+
+## Things UI can do:
+
+- On first render it should see the list of the first 5 stories from `topstories` by HackerNews/API and you can go through the pagination.
+- You can Select a story and it will open it in a new window
+- I've tested it on smaller devices down to iPhone 5s, obviously there are a couple of breakpoints that will help responsiveness but this is something to improve.
+- In case of error a notification will be displayed so user knows that failed to load (this is not very pretty though)
+
+---
+
+## Live demo
+
+Click
+[here](https://master.d3417btaf17vpa.amplifyapp.com/)
+
+---
+
+## Things to improve
+
+Due the time limitation there are a list of things I would improve.
+
+- Filtering news by timestamp (this is due to API [Hacker-News/API](https://github.com/HackerNews/API) limitations at least I couldn't see a way to filter the list of storiesIds by timestamp).
+
+- Testing and test coverage including adding automation tests
+
+- Add [storybook](https://storybook.js.org/docs/guides/guide-react/) to the project.
+
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**

@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "../../../styled-components";
-import { ReactComponent as PuzzleCollab } from "../../../assets/teamwork-puzzle.svg";
+import { ReactComponent as PuzzleCollab } from "../../../assets/banner-logo.svg";
 
 const PageBanner = () => {
   return (
