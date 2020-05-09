@@ -88,7 +88,6 @@ const TopStoriesDashboardComponent = ({
     const storiesIdToLoad = storiesId.slice(step, step + stepSize);
     selectStories(storiesIdToLoad);
   }, [currentPageIndex, loadingStories]);
-
   return (
     <PageContainer>
       <PageTopContent>
@@ -127,6 +126,7 @@ const TopStoriesDashboardComponent = ({
 
       <PaginationWrapper>
         <Pagination
+          data-testid="pagination"
           pageSize={stepSize}
           current={currentPageIndex + 1}
           total={storiesId.length}
