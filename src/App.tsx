@@ -8,13 +8,11 @@ import MostRecentDashboardComponent from "./stories-module/most-recent/most-rece
 import TopStoriesDashboardComponent from "./stories-module/top-stories/top-stories-dashboard.container.component";
 import MenuPanel from "./stories-module/components/menu/menu";
 import "antd/dist/antd.min.css";
-import { createBrowserHistory } from "history";
 
 import "./App.css";
 
 function App() {
   const store = configureStore();
-  const history = createBrowserHistory();
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>

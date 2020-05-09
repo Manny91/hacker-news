@@ -178,15 +178,42 @@ exports[`ListCards Component should render properly 1`] = `
   }
 }
 
+@media (max-width:768px) {
+  .c13 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 @media (max-width:992px) {
   .c3 {
     display: none;
   }
 }
 
+@media (max-width:768px) {
+  .c3 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 @media (max-width:992px) {
   .c11 {
     display: none;
+  }
+}
+
+@media (max-width:768px) {
+  .c11 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 

@@ -11,6 +11,12 @@ import {
   PERFORM_GET_STORIES_DETAIL_SUCCESS,
   GetStoriesDetailErrorAction,
   PERFORM_GET_STORIES_DETAIL_ERROR,
+  GetMostRecentStoriesSuccessAction,
+  PERFORM_GET_MOST_RECENT_STORIES,
+  GetMostRecentStoriesAction,
+  PERFORM_GET_MOST_RECENT_STORIES_SUCCESS,
+  GetMostRecentStoriesErrorAction,
+  PERFORM_GET_MOST_RECENT_STORIES_ERROR,
 } from "../stories.actions";
 import storiesReducer, { StoriesState } from "../stories.reducer";
 import { Story } from "../../services/stories.service";
@@ -22,6 +28,9 @@ const defaultState: StoriesState = {
   error: "",
   storiesId: [],
   storiesDictionary: {},
+  mostRecentStoriesId: [],
+  loadingMostRecentStories: true,
+  selectedMostRecentStories: [],
 };
 
 describe("Stories Reducer", () => {
@@ -131,6 +140,52 @@ describe("Stories Reducer", () => {
     const expectedState: StoriesState = {
       ...defaultState,
       loadingStoriesDetail: false,
+      error: payload,
+    };
+
+    const actualState = storiesReducer(defaultState, action);
+    expect(actualState).toEqual(expectedState);
+  });
+
+  it("Sets the expected state for performing GetStoriesAction", () => {
+    const action: GetMostRecentStoriesAction = {
+      type: PERFORM_GET_MOST_RECENT_STORIES,
+    };
+    const expectedState = {
+      ...defaultState,
+      loadingMostRecentStories: true,
+    };
+
+    const actualState = storiesReducer(defaultState, action);
+    expect(actualState).toEqual(expectedState);
+  });
+
+  it("Sets the expected state for performing GetMostRecentStoriesSuccessAction", () => {
+    const mostRecentStoriesId = [1, 2, 3, 4, 5, 6, 7];
+    const action: GetMostRecentStoriesSuccessAction = {
+      type: PERFORM_GET_MOST_RECENT_STORIES_SUCCESS,
+      payload: mostRecentStoriesId,
+    };
+    const expectedState: StoriesState = {
+      ...defaultState,
+      loadingMostRecentStories: false,
+      mostRecentStoriesId,
+    };
+
+    const actualState = storiesReducer(defaultState, action);
+    expect(actualState).toEqual(expectedState);
+  });
+
+  it("Sets the expected state for performing GetStoriesErrorAction", () => {
+    const payload = "error";
+
+    const action: GetMostRecentStoriesErrorAction = {
+      type: PERFORM_GET_MOST_RECENT_STORIES_ERROR,
+      payload,
+    };
+    const expectedState: StoriesState = {
+      ...defaultState,
+      loadingMostRecentStories: false,
       error: payload,
     };
 

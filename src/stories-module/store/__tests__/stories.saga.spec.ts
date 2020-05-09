@@ -1,14 +1,22 @@
 import {
+  performGetMostRecentStoriesErrorAction,
+  performGetStoriesErrorAction,
+  performGetStoriesSuccessAction,
+  performGetMostRecentStoriesSuccessAction,
+} from "./../stories.actions";
+import {
   PERFORM_GET_STORIES,
   PERFORM_GET_STORIES_DETAIL,
   performGetStoriesDetailAction,
+  PERFORM_GET_MOST_RECENT_STORIES,
 } from "../stories.actions";
 import {
   storiesSaga,
   performGetStoriesSaga,
   performGetStoriesDetailSaga,
+  performGetMostRecentStoriesSaga,
 } from "../stories.sagas";
-import { takeLatest, all, call, takeEvery } from "redux-saga/effects";
+import { takeLatest, all, call, takeEvery, put } from "redux-saga/effects";
 import storiesService from "../../services/stories.service";
 
 describe("Stories Sagas", () => {
@@ -16,6 +24,10 @@ describe("Stories Sagas", () => {
     const generator = storiesSaga();
     const expectedYield = all([
       takeLatest(PERFORM_GET_STORIES, performGetStoriesSaga),
+      takeLatest(
+        PERFORM_GET_MOST_RECENT_STORIES,
+        performGetMostRecentStoriesSaga
+      ),
       takeEvery(PERFORM_GET_STORIES_DETAIL, performGetStoriesDetailSaga),
     ]);
     const actualYield = generator.next().value;
@@ -26,9 +38,47 @@ describe("Stories Sagas", () => {
     const generator = performGetStoriesSaga();
 
     it("should call storiesService.getTopStories correctly", () => {
-      // we call it with no arguments
       const expectedYield = call(storiesService.getTopStories);
       const actualYield = generator.next().value;
+      expect(actualYield).toEqual(expectedYield);
+    });
+
+    it("should put performGetStoriesSuccessAction after a successful call", () => {
+      const response = [1, 2, 3, 4, 5, 6];
+      const expectedYield = put(performGetStoriesSuccessAction(response));
+      const actualYield = generator.next(response).value;
+      expect(actualYield).toEqual(expectedYield);
+    });
+
+    it("should put performGetStoriesErrorAction after a failing call", () => {
+      const error = { message: "test error" };
+      const expectedYield = put(performGetStoriesErrorAction(error.message));
+      const actualYield = generator.throw(error).value;
+      expect(actualYield).toEqual(expectedYield);
+    });
+  });
+
+  describe("performGetMostRecentStories saga", () => {
+    const generator = performGetMostRecentStoriesSaga();
+    it("should call storiesService.getMostRecentStories correctly", () => {
+      const expectedYield = call(storiesService.getMostRecentStories);
+      const actualYield = generator.next().value;
+      expect(actualYield).toEqual(expectedYield);
+    });
+    it("should put performGetMostRecentStoriesSuccessAction after a successful call", () => {
+      const response = [1, 2, 3, 4, 5, 6];
+      const expectedYield = put(
+        performGetMostRecentStoriesSuccessAction(response)
+      );
+      const actualYield = generator.next(response).value;
+      expect(actualYield).toEqual(expectedYield);
+    });
+    it("should put performGetMostRecentStoriesErrorAction after a failing call", () => {
+      const error = { message: "test error" };
+      const expectedYield = put(
+        performGetMostRecentStoriesErrorAction(error.message)
+      );
+      const actualYield = generator.throw(error).value;
       expect(actualYield).toEqual(expectedYield);
     });
   });

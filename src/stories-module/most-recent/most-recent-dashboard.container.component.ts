@@ -1,8 +1,8 @@
 import {
   getMostRecentStoriesId,
   getMostRecentStoriesLoading,
-  getLoadingMostRecentStoriesDetail,
   getSelectedMostRecentStoriesFromDictionary,
+  getLoadingStoriesDetail,
 } from "../store/stories.reducer";
 import { getStoriesError } from "../store/stories.reducer";
 import {
@@ -35,7 +35,7 @@ function mapStateToProps(state: AppState): MapStateToProps {
     storiesId: getMostRecentStoriesId(state),
     error: getStoriesError(state),
     loadingStories: getMostRecentStoriesLoading(state),
-    loadingStoriesDetail: getLoadingMostRecentStoriesDetail(state),
+    loadingStoriesDetail: getLoadingStoriesDetail(state),
     selectedStories: getSelectedMostRecentStoriesFromDictionary(state),
   };
 }

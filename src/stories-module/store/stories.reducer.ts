@@ -15,7 +15,6 @@ export interface StoriesState {
   selectedStories: number[];
   mostRecentStoriesId: number[];
   loadingMostRecentStories: boolean;
-  loadingMostRecentStoriesDetail: boolean;
   selectedMostRecentStories: number[];
 }
 
@@ -28,7 +27,6 @@ export const initialStoriesState: StoriesState = {
   selectedStories: [],
   mostRecentStoriesId: [],
   loadingMostRecentStories: true,
-  loadingMostRecentStoriesDetail: false,
   selectedMostRecentStories: [],
 };
 
@@ -160,10 +158,7 @@ export const getMostRecentStoriesLoading = createSelector(
   storiesState,
   (slice) => slice.loadingMostRecentStories
 );
-export const getLoadingMostRecentStoriesDetail = createSelector(
-  storiesState,
-  (slice) => slice.loadingMostRecentStoriesDetail
-);
+
 export const getSelectedMostRecentStories = createSelector(
   storiesState,
   (slice) => slice.selectedMostRecentStories
@@ -171,7 +166,7 @@ export const getSelectedMostRecentStories = createSelector(
 export const getSelectedMostRecentStoriesFromDictionary = createSelector(
   getSelectedMostRecentStories,
   getStoriesDictionary,
-  getLoadingMostRecentStoriesDetail,
+  getLoadingStoriesDetail,
   (selectedStories, storiesDictionary, loadingStoriesDetail) => {
     return !loadingStoriesDetail
       ? selectedStories.map((id) => storiesDictionary[id])

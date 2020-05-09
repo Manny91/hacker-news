@@ -116,6 +116,15 @@ exports[`Card Component should render properly 1`] = `
   }
 }
 
+@media (max-width:768px) {
+  .c2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 @media (max-width:992px) {
   .c4 {
     padding: 7px;

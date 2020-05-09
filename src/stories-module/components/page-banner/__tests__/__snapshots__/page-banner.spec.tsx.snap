@@ -7,7 +7,7 @@ exports[`PageBanner Component should render properly 1`] = `
   display: -ms-flexbox;
   display: flex;
   background-color: #2a13bd;
-  height: 140px;
+  min-height: 140px;
   border-radius: 7px;
   margin: 40px 0px 25px;
   padding: 20px;
@@ -15,6 +15,11 @@ exports[`PageBanner Component should render properly 1`] = `
 
 .c1 {
   width: 25%;
+}
+
+.c1 svg {
+  height: auto;
+  width: 70%;
 }
 
 .c2 {
@@ -62,7 +67,7 @@ exports[`PageBanner Component should render properly 1`] = `
   font-weight: bold;
   cursor: pointer;
   width: 160px;
-  height: 40px;
+  min-height: 40px;
   border-radius: 7px;
 }
 
@@ -80,6 +85,14 @@ exports[`PageBanner Component should render properly 1`] = `
   color: #f0f0f0;
 }
 
+@media (max-width:568px) {
+  .c0 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
 @media (max-width:992px) {
   .c1 {
     display: none;
@@ -92,6 +105,16 @@ exports[`PageBanner Component should render properly 1`] = `
   }
 }
 
+@media (max-width:568px) {
+  .c5 {
+    width: 50%;
+    -webkit-box-pack: end;
+    -webkit-justify-content: end;
+    -ms-flex-pack: end;
+    justify-content: end;
+  }
+}
+
 <div>
   <div
     class="c0"
@@ -99,7 +122,9 @@ exports[`PageBanner Component should render properly 1`] = `
     <div
       class="c1"
     >
-      Img Placeholder
+      <svg>
+        banner-logo.svg
+      </svg>
     </div>
     <div
       class="c2"
