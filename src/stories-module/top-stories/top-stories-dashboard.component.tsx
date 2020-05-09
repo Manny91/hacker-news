@@ -169,12 +169,16 @@ const PageOverview = styled.div`
 const OverviewWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  @media ${(props) => props.theme.media.lg} {
+    flex-direction: column;
+  }
 `;
 
 const TimeFilterButton = styled.button`
   border: 0px;
   border-radius: ${(props) => props.theme.borders.normal};
-  margin-left: ${(props) => props.theme.spacing.md};
+  margin-right: ${(props) => props.theme.spacing.md};
+
   padding: 4px 15px;
   font-size: 12px;
   background-color: ${(props) => props.theme.colors.almostWhite};
@@ -183,6 +187,13 @@ const TimeFilterButton = styled.button`
   transition-property: box-shadow;
   cursor: pointer;
   color: ${(props) => props.theme.colors.nearlyBlack};
+
+  @media ${(props) => props.theme.media.lg} {
+    margin-bottom: ${(props) => props.theme.spacing.sm};
+  }
+  &:last-child {
+    margin-right: 0px;
+  }
   &:hover,
   &.active {
     background-color: white;
