@@ -94,7 +94,16 @@ const TopStoriesDashboardComponent = ({
       <PageTopContent>
         <PageBanner />
         <PageOverview>
-          <h2>Overview</h2>
+          <OverviewWrapper>
+            <h2>Overview</h2>
+            <div>
+              <TimeFilterButton className="active">Today</TimeFilterButton>
+              <TimeFilterButton>Yesterday</TimeFilterButton>
+              <TimeFilterButton>Week</TimeFilterButton>
+              <TimeFilterButton>Month</TimeFilterButton>
+            </div>
+          </OverviewWrapper>
+
           <ListCards />
         </PageOverview>
         <Divider></Divider>
@@ -157,7 +166,30 @@ const PageTopContent = styled.div`
 const PageOverview = styled.div`
   margin: 0px;
 `;
+const OverviewWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 
+const TimeFilterButton = styled.button`
+  border: 0px;
+  border-radius: ${(props) => props.theme.borders.normal};
+  margin-left: ${(props) => props.theme.spacing.md};
+  padding: 4px 15px;
+  font-size: 12px;
+  background-color: ${(props) => props.theme.colors.almostWhite};
+  transform: perspective(1px) translateZ(0);
+  transition-duration: 0.3s;
+  transition-property: box-shadow;
+  cursor: pointer;
+  color: ${(props) => props.theme.colors.nearlyBlack};
+  &:hover,
+  &.active {
+    background-color: white;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 10px 10px -12px rgba(0, 0, 0, 0.5);
+  }
+`;
 const TimeDisplay = styled.div`
   width: 100px;
 `;
