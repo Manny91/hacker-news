@@ -32,7 +32,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ## Things UI can do:
 
 - On first render it should see the list of the first 5 stories from `topstories` by HackerNews/API and you can go through the pagination.
-- You can Select a story and it will open it in a new window
+- You can select a story and it will open it in a new window.
+- You can navigate to `Most Recent` page by clicking in the menu Most Recent and you will get the same behaviour and layout as Top Stories but the table will load `newsstories` instead.
 - I've tested it on smaller devices down to iPhone 5s, obviously there are a couple of breakpoints that will help responsiveness but this is something to improve.
 - In case of error a notification will be displayed so user knows that failed to load (this is not very pretty though)
 
